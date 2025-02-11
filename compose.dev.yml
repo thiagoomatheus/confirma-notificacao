@@ -25,7 +25,6 @@ services:
   db:
     container_name: postgres
     image: postgres:15-alpine
-    restart: always
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -37,7 +36,6 @@ services:
   evolution-api:
     container_name: evolution_api
     image: atendai/evolution-api:v1.8.0
-    restart: always
     ports:
       - "8080:8080"
     env_file:
