@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,4 +5,48 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id                String       @id @default(uuid())
+  email             String       @unique
+  instanciaWhatsApp String?
+  nome              String
+  mensagens Mensagem[]
+  notificacao Notificacao[]
+
+  @@map("usuarios")
+}
+
+model Mensagem {
+  id String @id @default(uuid())
+  idUsuario String
+  usuarioReference Usuario @relation(fields: [idUsuario], references: [id])
+  titulo String
+  saudacao String?
+  saudacaoNome Boolean?
+  corpo String
+  lembreteData DateTime
+  lembreteHora String
+  lembreteLocal String?
+  obs Boolean
+  acaoTexto String?
+  notificacoes Notificacao[]
+}
+
+model Notificacao {
+  id String @id @default(uuid())
+  idUsuario String
+  usuarioReference Usuario @relation(fields: [idUsuario], references: [id])
+  idMensagem String
+  mensagemReference Mensagem @relation(fields: [idMensagem], references: [id])
+  nome String?
+  data DateTime
+  hora String
+  local String?
+  obsTexto String?
+  dataEnvio DateTime
+  horaEnvio String
+  telefone String
+  status Boolean
 }
