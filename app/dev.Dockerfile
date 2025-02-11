@@ -45,14 +45,6 @@ ENV NODE_ENV=development
 RUN npm install -g tsx
 RUN apk add --no-cache openssl
 
-# Defina o cronjob
-# RUN mkdir /etc/cron.d \
-#  && mkdir /app/logs \
-#  && echo "* * * * * cd /app && npx tsx app/lib/notificacao/index.ts | tee /app/logs/cron.log" > /etc/cron.d/notificar \
-#  && chmod 0644 /etc/cron.d/notificar \
-#  && crontab /etc/cron.d/notificar \
-#  && echo "nextjs" > /etc/cron.allow
-
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED=1
 
