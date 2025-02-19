@@ -28,3 +28,24 @@ body {
   background: var(--bg);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+h1 {
+  @apply text-3xl;
+  @apply font-bold;
+}
+
+p, button, a {
+  @apply text-xs;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    @apply text-5xl;
+  }
+
+  p, button, a {
+    @apply text-base;
+  }
+
+}
+
