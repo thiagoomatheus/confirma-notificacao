@@ -38,6 +38,33 @@ p, button, a {
   @apply text-xs;
 }
 
+.caixa {
+  @apply relative;
+  @apply bg-bg;
+  @apply w-64;
+  @apply h-[450px];
+  @apply rounded-t-3xl;
+  @apply rounded-s-3xl;
+}
+
+.caixa::after, .caixa::before {
+  content: "";
+  @apply absolute;
+  @apply -z-10;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  top: -10px;
+  background: linear-gradient(45deg, var(--primaria), var(--secundaria), var(--terciaria), var(--primaria), var(--secundaria), var(--terciaria));
+  @apply rounded-t-3xl;
+  @apply rounded-s-3xl;
+  background-size: 300%;
+  animation: AnimaBorda 6s linear infinite;
+}
+
+.caixa::after {
+  filter: blur(10px);
+}
+
 @media (min-width: 768px) {
   h1 {
     @apply text-5xl;
@@ -47,5 +74,21 @@ p, button, a {
     @apply text-base;
   }
 
+  .caixa {
+    @apply max-w-2xl;
+    @apply w-full;
+  }
+
+  .caixa::after, .caixa::before {
+    left: -10px;
+  }
 }
 
+@keyframes AnimaBorda {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 300%;
+  }
+}
