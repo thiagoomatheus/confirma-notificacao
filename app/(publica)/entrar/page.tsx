@@ -1,9 +1,9 @@
 import Image from "next/image";
 import login from "@/public/Login-amico.svg";
 import Link from "next/link";
-import Container from "./componentes/Container";
-import BotaoLogin from "./componentes/BotaoLogin";
-import { auth } from "@/app/lib/auth/auth";
+import Container from "./_componentes/ui/Container";
+import BotaoLogin from "./_componentes/ui/BotaoLogin";
+import { auth } from "@/app/_lib/auth/auth";
 import { redirect } from "next/navigation";
 
 export default async function Page() {

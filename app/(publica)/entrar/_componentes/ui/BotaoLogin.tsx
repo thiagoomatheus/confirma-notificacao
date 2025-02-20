@@ -1,6 +1,6 @@
 "use client"
 
-import BotaoPadrao from "@/app/componentes/BotaoPadrao";
+import BotaoPadrao from "@/app/_componentes/ui/BotaoPadrao";
 import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
