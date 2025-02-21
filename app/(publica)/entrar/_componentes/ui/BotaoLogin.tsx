@@ -1,21 +1,13 @@
 "use client"
 
+import React from "react"
 import BotaoPadrao from "@/app/_componentes/ui/BotaoPadrao";
-import { signIn } from "next-auth/react";
-import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
+import useLogin from "../../_hooks/useLogin";
 
 export default function BotaoLogin() {
 
-    const acaoLogin = async () => {
-        const toastId = toast.loading("Entrando...")
-
-        const result = await signIn("google", { redirectTo: "/dashboard" })
-
-        if (result?.error) return toast.error(result.error, { id: toastId })
-            
-        return toast.success("Prossiga com o login", { id: toastId })
-    }
+    const { acaoLogin } = useLogin()
 
     return (
         <BotaoPadrao
