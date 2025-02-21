@@ -1,3 +1,4 @@
+import React from "react"
 import Link from "next/link"
 import { twMerge } from "tailwind-merge"
 
@@ -5,7 +6,7 @@ type BotaoProps = {
     children: React.ReactNode
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
-export default function BotaoPadrao( {children, className, ...rest}: BotaoProps ) {
+export default function BotaoLink( {children, className, ...rest}: BotaoProps ) {
     return (
         <Link
             href={rest.href || "#"}
