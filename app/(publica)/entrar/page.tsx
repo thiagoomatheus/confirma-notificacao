@@ -22,8 +22,8 @@ export default async function Page() {
                 />
             </ContainerFlex>
             
-            <ContainerFlex className="gap-5 md:gap-10">
-                <h1 className="text-primaria">Conecte-se</h1>
+            <ContainerFlex className="gap-10 md:gap-16">
+                <h1 className="dark:text-primaria text-terciaria">Conecte-se</h1>
 
                 <BotaoLogin />
 
