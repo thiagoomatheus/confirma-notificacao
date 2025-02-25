@@ -15,7 +15,7 @@ export default function BotaoLogin() {
             <>
                 <RiGoogleFill role="icone-google" className="text-2xl" />
                 <p>Entrar com Google</p>
-                <IoIosLock />
+                <IoIosLock role="icone-lock" />
             </>
         </BotaoPadrao>
     )
