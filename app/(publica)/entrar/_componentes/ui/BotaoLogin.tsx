@@ -2,21 +2,20 @@
 
 import React from "react"
 import BotaoPadrao from "@/app/_componentes/ui/BotaoPadrao";
-import { FcGoogle } from "react-icons/fc";
 import useLogin from "../../_hooks/useLogin";
+import { RiGoogleFill } from "react-icons/ri";
+import { IoIosLock } from "react-icons/io";
 
 export default function BotaoLogin() {
 
     const { acaoLogin } = useLogin()
 
     return (
-        <BotaoPadrao
-            className="bg-transparent gap-5 hover:bg-transparent hover:text-texto"
-            onClick={async () => await acaoLogin()}
-        >
+        <BotaoPadrao onClick={async () => await acaoLogin()} >
             <>
-                <FcGoogle role="icone-google" className="text-2xl" />
+                <RiGoogleFill role="icone-google" className="text-2xl" />
                 <p>Entrar com Google</p>
+                <IoIosLock />
             </>
         </BotaoPadrao>
     )
