@@ -42,7 +42,7 @@ p, button, a {
   @apply relative;
   @apply bg-bg;
   @apply w-64;
-  @apply h-[450px];
+  @apply h-[550px];
   @apply rounded-t-3xl;
   @apply rounded-s-3xl;
 }
