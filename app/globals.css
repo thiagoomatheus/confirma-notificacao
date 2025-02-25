@@ -10,16 +10,17 @@
 
 :root {
   --primaria: #25D366;
-  --secundaria: #1A8C1C;
-  --terciaria: #A7D1AB;
-  --bg: #F2F2F2;
-  --texto: #1F2426;
+  --secundaria: #333333;
+  --terciaria: #5A7D66;
+  --bg: #f8f8f8;
+  --texto: #222222;
+
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1F2426;
-    --texto: #F2F2F2;
+    --bg: #222222;
+    --texto: #f8f8f8;
   }
 }
 
