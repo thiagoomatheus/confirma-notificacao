@@ -15,7 +15,7 @@ export default function BotaoLogin() {
             onClick={async () => await acaoLogin()}
         >
             <>
-                <FcGoogle className="text-2xl" />
+                <FcGoogle role="icone-google" className="text-2xl" />
                 <p>Entrar com Google</p>
             </>
         </BotaoPadrao>
