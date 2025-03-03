@@ -1,5 +1,7 @@
 // __mocks__/next-auth/react.js
 
+import { jest } from "@jest/globals";
+
 export const getProviders = jest.fn(async () => {
   console.log("Mocked getProviders called");
   return {
@@ -121,4 +123,10 @@ export const getToken = jest.fn(async () => {
 
 jest.mock("next-auth/react", () => ({
   signIn: signIn,
+  signOut: signOut,
+  useSession: useSession,
+  getToken: getToken,
+  __NEXTAUTH: __NEXTAUTH,
+  getCsrfToken: getCsrfToken,
+  getProviders: getProviders
 }));
