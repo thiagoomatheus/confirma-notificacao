@@ -10,8 +10,15 @@ const createJestConfig = nextJest({
 const config: Config = {
   coverageProvider: 'v8',
   testEnvironment: 'jsdom',
-  // Add more setup options before each test is run
-  // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+    'next-auth/providers/google':
+      '<rootDir>/app/__mocks__/next-auth-google.ts',
+    'next-auth': '<rootDir>/app/__mocks__/next-auth.ts',
+    'next-auth/react': '<rootDir>/app/__mocks__/next-auth/react.js',
+    'next-auth/next': '<rootDir>/app/__mocks__/next-auth.ts',
+  }
 }
  
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
