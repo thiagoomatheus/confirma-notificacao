@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import login from "@/public/Login-amico.svg";
 import Link from "next/link";
