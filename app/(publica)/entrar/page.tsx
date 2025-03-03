@@ -28,7 +28,7 @@ export default async function Page() {
 
                 <BotaoLogin />
 
-                <p className="text-[10px] text-center w-full max-w-60">Ao continuar, você concorda com nossos <Link className="text-[10px] underline underline-offset-2 font-bold" href="/termos-de-serviço">Termos de serviços</Link> e nossa <Link className="text-[10px] underline underline-offset-2 font-bold" href="/politicas-de-privacidade">Políticas de privacidade</Link>.</p>
+                <p className="text-[10px] text-center w-full max-w-60">Ao continuar, você concorda com nossos <Link className="text-[10px] underline underline-offset-2 font-bold" href="/termos-de-servico">Termos de serviço</Link> e nossa <Link className="text-[10px] underline underline-offset-2 font-bold" href="/politicas-de-privacidade">Políticas de privacidade</Link>.</p>
             </ContainerFlex>
         </section>
     )
