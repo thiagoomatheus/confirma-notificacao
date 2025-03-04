@@ -17,8 +17,8 @@ describe("BotaoLogin Component", () => {
     render(<BotaoLogin />);
 
     expect(screen.getByText("Entrar com Google")).toBeInTheDocument();
-    expect(screen.getByRole("icone-google")).toBeInTheDocument();
-    expect(screen.getByRole("icone-lock")).toBeInTheDocument();
+    expect(screen.getByTestId("icone-google")).toBeInTheDocument();
+    expect(screen.getByTestId("icone-cadeado")).toBeInTheDocument();
   });
 
   test("deve chamar signIn com 'google' e redirecionar para /dashboard em caso de sucesso", async () => {

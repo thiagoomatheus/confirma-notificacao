@@ -13,9 +13,9 @@ export default function BotaoLogin() {
     return (
         <BotaoPadrao onClick={async () => await acaoLogin()} >
             <>
-                <RiGoogleFill role="icone-google" className="text-base md:text-2xl" />
+                <RiGoogleFill data-testid="icone-google" className="text-base md:text-2xl" />
                 <p>Entrar com Google</p>
-                <IoIosLock role="icone-lock" className="text-base md:text-2xl" />
+                <IoIosLock data-testid="icone-cadeado" className="text-base md:text-2xl" />
             </>
         </BotaoPadrao>
     )
