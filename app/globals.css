@@ -34,6 +34,16 @@ h1 {
   @apply font-bold;
 }
 
+h2 {
+  @apply text-2xl;
+  @apply font-bold;
+}
+
+h3 {
+  @apply text-xl;
+  @apply font-bold;
+}
+
 p, button, a {
   @apply text-xs;
 }
@@ -68,6 +78,14 @@ p, button, a {
 @media (min-width: 768px) {
   h1 {
     @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-3xl;
   }
 
   p, button, a {
