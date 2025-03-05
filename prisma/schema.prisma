@@ -22,15 +22,15 @@ model Mensagem {
   id String @id @default(uuid())
   idUsuario String
   usuarioReference Usuario @relation(fields: [idUsuario], references: [id])
-  titulo String
+  assunto String
   saudacao String?
   saudacaoNome Boolean?
   corpo String
-  lembreteData DateTime
-  lembreteHora String
   lembreteLocal String?
   obs Boolean
   acaoTexto String?
+  totalNotificacoes Int @default(0)
+  notificacoesEnviadas Int @default(0)
   notificacoes Notificacao[]
 }
 
