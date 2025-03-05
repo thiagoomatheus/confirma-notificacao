@@ -61,8 +61,6 @@ COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules/.prisma ./node_modules/.prisma
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules/@prisma ./node_modules/@prisma
 
-COPY --from=builder --chown=nextjs:nodejs /app/app/lib/notificacao/ ./notificacao
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules/date-fns ./node_modules/date-fns
 
 # RUN chown -R nextjs:nodejs /app/node_modules/@prisma
 
@@ -80,4 +78,4 @@ ENV PORT=3000
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
 ENV HOSTNAME="0.0.0.0"
-CMD ["npm", "run", "start:migrate:dev"]
+CMD ["npm", "run", "start"]
