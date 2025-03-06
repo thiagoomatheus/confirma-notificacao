@@ -1,4 +1,4 @@
-import Card from "./_componentes/ui/CardBase";
+import React from "react";
 import GraficoMensagensProgramadas from "./_componentes/ui/GraficoMensagensProgramadas"
 import { MdSchedule } from "react-icons/md";
 import { AiOutlineSchedule } from "react-icons/ai";
@@ -34,7 +34,7 @@ export default async function Dashboard() {
     ]
 
     return (
-        <section className="p-4 w-full max-w-7xl flex flex-col self-center gap-10">
+        <>
             <h1>Dashboard</h1>
 
             <h2>Resumo de hoje</h2>
@@ -58,5 +58,6 @@ export default async function Dashboard() {
             </div>
 
             <SessaoMensagens mensagensConfiguradas={mensagensConfiguradas} limiteExibicao={4} />
+        </>
     );
 }
