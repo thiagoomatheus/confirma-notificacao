@@ -6,10 +6,9 @@ import { MdOutlineScheduleSend } from "react-icons/md";
 import { MdOutlineCancelScheduleSend } from "react-icons/md";
 import CardNumeros from "./_componentes/ui/CardNumeros";
 import BotaoLink from "@/app/_componentes/ui/BotaoLink";
-import { FaPlus } from "react-icons/fa6";
 import { RiGalleryView2 } from "react-icons/ri";
-import CardMensagem from "./_componentes/ui/CardMensagem";
 import { Mensagem } from "@prisma/client";
+import SessaoMensagens from "./_componentes/ui/SessaoMensagens";
 
 export default async function Dashboard() {
 
@@ -58,22 +57,6 @@ export default async function Dashboard() {
                 </BotaoLink>
             </div>
 
-            <section className="flex flex-col md:flex-row gap-4 w-full flex-wrap">
-
-                {mensagensConfiguradas.length <= 0 && (
-                    <>
-                        <p>Voce ainda nao possui mensagens configuradas. Clique no botão abaixo para adicionar uma nova.</p>
-                        <BotaoLink href="/dashboard/mensagens/novo">
-                            <FaPlus />
-                            Adicionar
-                        </BotaoLink>
-                    </>
-                )}
-
-                {mensagensConfiguradas.map((mensagem) => (
-                    <CardMensagem key={mensagem.id} mensagem={mensagem} />
-                ))}
-            </section>
-        </section>
+            <SessaoMensagens mensagensConfiguradas={mensagensConfiguradas} limiteExibicao={4} />
     );
 }
