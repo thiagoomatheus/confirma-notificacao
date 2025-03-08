@@ -8,6 +8,8 @@
   -webkit-box-sizing: border-box;
 }
 
+/* Cores */
+
 :root {
   --primaria: #25D366;
   --secundaria: #333333;
@@ -23,6 +25,31 @@
     --texto: #f8f8f8;
   }
 }
+
+/* Barra de Rolagem */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--terciaria) var(--bg);
+}
+
+/* Chrome, Edge, e Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--terciaria);
+  border-radius: 20px;
+  border: 3px solid var(--bg);
+}
+
+/* Seletores */
 
 body {
   color: var(--texto);
