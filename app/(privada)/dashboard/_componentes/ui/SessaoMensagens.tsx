@@ -18,7 +18,7 @@ export default function SessaoMensagens( { mensagensConfiguradas, limiteExibicao
             {mensagensASeremExibidas.length <= 0 && (
                 <>
                     <p>Voce ainda nao possui mensagens configuradas. Clique no botão abaixo para adicionar uma nova.</p>
-                    <BotaoLink href="/dashboard/mensagens/novo">
+                    <BotaoLink href="/dashboard/mensagens/adicionar">
                         <FaPlus />
                         Adicionar
                     </BotaoLink>
