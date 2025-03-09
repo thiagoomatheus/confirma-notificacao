@@ -49,6 +49,16 @@
   border: 3px solid var(--bg);
 }
 
+/* Tootip */
+
+.tooltip {
+  @apply invisible absolute duration-100;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
+
 /* Seletores */
 
 body {
