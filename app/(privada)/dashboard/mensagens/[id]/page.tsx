@@ -4,6 +4,7 @@ import BotaoLink from "@/app/_componentes/ui/BotaoLink"
 import { BiSolidMessageEdit } from "react-icons/bi";
 import TabelaComMensagensProgramadas from "../../_componentes/ui/TabelaComMensagensProgramadas";
 import { MdOutlineNotificationAdd } from "react-icons/md";
+import SessaoComBorda from "./_componentes/ui/SessaoComBorda";
 
 type MensagemIdProps = {
     params: Promise<{ id: string}>
@@ -74,7 +75,7 @@ export default async function MensagemId( { params }: MensagemIdProps ) {
         <>
             <h1>Mensagem {id.slice(0, 8)}...</h1>
             
-            <section className="flex flex-col gap-5 md:gap-8 border border-terciaria p-2 sm:p-6">
+            <SessaoComBorda>
 
                 <h3>Configurações da mensagem</h3>
 
@@ -122,7 +123,7 @@ export default async function MensagemId( { params }: MensagemIdProps ) {
                     Editar
                 </BotaoLink>
 
-            </section>
+            </SessaoComBorda>
             
             <hr  />
 
