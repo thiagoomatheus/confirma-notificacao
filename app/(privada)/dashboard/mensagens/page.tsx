@@ -1,5 +1,7 @@
 import { Mensagem } from "@prisma/client"
 import SessaoMensagens from "../_componentes/ui/SessaoMensagens"
+import BotaoLink from "@/app/_componentes/ui/BotaoLink"
+import { FaPlus } from "react-icons/fa"
 
 export default function MensagemPage() {
     
@@ -61,7 +63,13 @@ export default function MensagemPage() {
     return (
         <>
 
-            <h1>Minhas mensagens</h1>
+            <div className="flex flex-row items-center justify-between">
+                <h1>Minhas mensagens</h1>
+                <BotaoLink href="/dashboard/mensagens/adicionar">
+                    <FaPlus />
+                    Adicionar
+                </BotaoLink>
+            </div>
 
             <SessaoMensagens mensagensConfiguradas={mensagensConfiguradas} />
             
