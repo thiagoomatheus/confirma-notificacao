@@ -131,7 +131,7 @@ export default async function MensagemId( { params }: MensagemIdProps ) {
 
                 <div className="flex flex-row items-center justify-between">
                     <h3>Notificações agendadas</h3>
-                    <BotaoLink href={`/dashboard/mensagens/${id}/adicionar`}>
+                    <BotaoLink href={`/dashboard/mensagens/${id}/notificacoes/adicionar`}>
                         <MdOutlineNotificationAdd className="text-2xl" />
                         Adicionar
                     </BotaoLink>
@@ -141,7 +141,6 @@ export default async function MensagemId( { params }: MensagemIdProps ) {
 
             </section>
 
-            
         </>
     )
 }
