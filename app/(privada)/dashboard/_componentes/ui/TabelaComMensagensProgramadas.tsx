@@ -1,5 +1,6 @@
 import { CabecalhoTabela, CelulaCabecalhoTabela, CelulaTabela, CorpoTabela, LegendaTabela, LinhaTabela, RodapeTabela, Tabela, TabelaRaiz } from "@/app/_componentes/ui/Tabela"
 import { Notificacao } from "@prisma/client";
+import Link from "next/link";
 import { MdEdit } from "react-icons/md";
 import { MdNotificationsActive } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
@@ -222,12 +223,12 @@ export default function TabelaComMensagensProgramadas() {
             <LinhaTabela key={item.id}>
               <CelulaTabela className="flex items-center gap-x-3">
 
-                <button className="has-tooltip">
+                <Link href={`/dashboard/mensagens/${item.id}/notificacoes/${item.id}/editar`} className="has-tooltip">
                   <span className='tooltip rounded shadow-lg p-1 bg-texto text-bg -mt-8 md:-mt-12 -ml-5 md:-ml-7'>
                     Editar
                   </span>
                   <MdEdit className="text-xl" />
-                </button>
+                </Link>
 
                 <button className="has-tooltip">
                   <span className='tooltip rounded shadow-lg p-1 bg-texto text-bg -mt-8 md:-mt-12 -ml-6 md:-ml-8'>
