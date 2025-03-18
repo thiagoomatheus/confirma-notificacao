@@ -81,8 +81,12 @@ h3 {
   @apply font-bold;
 }
 
-p, button, a {
+p, button, a, label, input, textarea {
   @apply text-xs;
+}
+
+input, textarea {
+  @apply bg-gray-100 dark:bg-secundaria border border-terciaria rounded-md hover:underline-offset-4 focus:outline-offset-4 focus:outline-primaria text-texto;
 }
 
 .caixa {
@@ -125,7 +129,7 @@ p, button, a {
     @apply text-3xl;
   }
 
-  p, button, a {
+  p, button, a, label, input, textarea {
     @apply text-base;
   }
 
