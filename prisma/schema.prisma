@@ -24,11 +24,14 @@ model Mensagem {
   usuarioReference Usuario @relation(fields: [idUsuario], references: [id])
   assunto String
   saudacao String?
-  saudacaoNome Boolean?
+  saudacaoNome Boolean
   corpo String
-  lembreteLocal String?
+  lembreteLocal Boolean
+  localFixo String?
   obs Boolean
-  acaoTexto String?
+  obsFixo String?
+  chamadaParaAcao String?
+  opcoes Json?
   totalNotificacoes Int @default(0)
   notificacoesEnviadas Int @default(0)
   notificacoes Notificacao[]
