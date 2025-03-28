@@ -1,4 +1,6 @@
-import { CabecalhoTabela, CelulaCabecalhoTabela, CelulaTabela, CorpoTabela, LegendaTabela, LinhaTabela, RodapeTabela, Tabela, TabelaRaiz } from "@/app/_componentes/ui/Tabela"
+import React from "react"
+import { CabecalhoTabela, CelulaCabecalhoTabela, CelulaTabela, CorpoTabela, LegendaTabela, LinhaTabela, Tabela, TabelaRaiz } from "@/app/_componentes/ui/Tabela"
+import Tooltip from "@/app/_componentes/ui/Tooltip";
 import { Notificacao } from "@prisma/client";
 import Link from "next/link";
 import { MdEdit } from "react-icons/md";
