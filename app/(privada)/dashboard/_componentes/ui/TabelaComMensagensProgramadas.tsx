@@ -226,23 +226,17 @@ export default function TabelaComMensagensProgramadas() {
               <CelulaTabela className="flex items-center gap-x-3">
 
                 <Link href={`/dashboard/mensagens/${item.id}/notificacoes/${item.id}/editar`} className="has-tooltip">
-                  <span className='tooltip rounded shadow-lg p-1 bg-texto text-bg -mt-8 md:-mt-12 -ml-5 md:-ml-7'>
-                    Editar
-                  </span>
+                  <Tooltip className="-ml-5 md:-ml-7" texto="Editar" />
                   <MdEdit className="text-xl" />
                 </Link>
 
                 <button className="has-tooltip">
-                  <span className='tooltip rounded shadow-lg p-1 bg-texto text-bg -mt-8 md:-mt-12 -ml-6 md:-ml-8'>
-                    Excluir
-                  </span>
+                  <Tooltip className="-mt-8 md:-mt-12 -ml-6 md:-ml-8" texto="Excluir" />
                   <MdDelete className="text-xl text-red-700" />
                 </button>
 
                 <button className="has-tooltip">
-                  <span className='tooltip rounded shadow-lg p-1 bg-texto text-bg -mt-8 md:-mt-12 -ml-10 md:-ml-12'>
-                    Enviar agora
-                  </span>
+                  <Tooltip className='-mt-8 md:-mt-12 -ml-10 md:-ml-12' texto="Enviar agora" />
                   <MdNotificationsActive className="text-xl text-primaria" />
                 </button>
               </CelulaTabela>
