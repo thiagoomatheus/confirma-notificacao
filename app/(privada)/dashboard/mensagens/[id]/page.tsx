@@ -89,55 +89,23 @@ export default async function MensagemId( { params }: MensagemIdProps ) {
         <>
             <h1>Mensagem {id.slice(0, 8)}...</h1>
             
-            <SessaoComBorda>
+            <div className="flex flex-col lg:flex-row gap-5">
+                <SessaoComBorda>
+                    <h3>Configurações da mensagem</h3>
+                    <SessaoConfigMensagem mensagem={mensagem} />
+                    <BotaoLink
+                        className="w-fit"
+                        href={`/dashboard/mensagens/${id}/editar`}
+                    >
+                        <BiSolidMessageEdit className="text-2xl" />
+                        Editar
+                    </BotaoLink>
+                </SessaoComBorda>
 
-                <h3>Configurações da mensagem</h3>
-
-                <section className="w-full flex flex-col md:flex-row gap-4 md:gap-6 flex-wrap">
-
-                    <CardConfiguracao
-                        label="Assunto"
-                        valor={mensagem?.assunto}
-                    />
-                    <CardConfiguracao
-                        label="Saudação"
-                        valor={mensagem?.saudacao || "Nao informado"}
-                    />
-                    <CardConfiguracao
-                        label="Saudação com nome"
-                        valor={mensagem?.saudacaoNome ? "Sim" : "Nao"}
-                    />
-                    <CardConfiguracao
-                        label="Corpo"
-                        valor={mensagem?.corpo.slice(0, 50)} />
-                    <CardConfiguracao
-                        label="Lembrete local"
-                        valor={mensagem?.lembreteLocal ? "Sim" : "Nao"}
-                    />
-                    <CardConfiguracao
-                        label="Observação"
-                        valor={mensagem?.obs ? "Sim" : "Nao"}
-                    />
-                    {mensagem?.obs && <CardConfiguracao
-                        label="Observação"
-                        valor={mensagem?.obs ? "Sim" : "Nao"}
-                    />}
-                    <CardConfiguracao
-                        label="Ação do texto"
-                        valor={mensagem?.acaoTexto || "Nao informado"}
-                    />
-
-                </section>
-
-                <BotaoLink
-                    className="w-fit"
-                    href={`/dashboard/mensagens/${id}/editar`}
-                >
-                    <BiSolidMessageEdit className="text-2xl" />
-                    Editar
-                </BotaoLink>
-
-            </SessaoComBorda>
+                <aside className="flex flex-col gap-5 items-center lg:items-end w-full">
+                    <CelularFrame mensagem={mensagem} />
+                </aside>
+            </div>
             
             <hr  />
 
