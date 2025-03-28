@@ -24,10 +24,13 @@ export default async function Dashboard() {
             assunto: "Assunto da mensagem",
             saudacao: "Olá, tudo bem?",
             corpo: "Corpo da mensagem",
-            lembreteLocal: "",
+            lembreteLocal: false,
+            localFixo: "Clinica",
             obs: false,
-            acaoTexto: "Confirme, por favor!",
+            obsFixo: "Clinica",
+            chamadaParaAcao: "Confirme, por favor!",
             saudacaoNome: false,
+            opcoes: JSON.stringify(["Opção 1", "Opção 2", "Opção 3", "Opção 4"]),
             totalNotificacoes: 10,
             notificacoesEnviadas: 5
         }
