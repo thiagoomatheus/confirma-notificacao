@@ -1,10 +1,12 @@
+import React from "react"
 import { Mensagem } from "@prisma/client"
-import CardConfiguracao from "./_componentes/ui/CardConfiguracao"
 import BotaoLink from "@/app/_componentes/ui/BotaoLink"
 import { BiSolidMessageEdit } from "react-icons/bi";
 import TabelaComMensagensProgramadas from "../../_componentes/ui/TabelaComMensagensProgramadas";
 import { MdOutlineNotificationAdd } from "react-icons/md";
-import SessaoComBorda from "./_componentes/ui/SessaoComBorda";
+import SessaoComBorda from "../../../../_componentes/ui/SessaoComBorda";
+import SessaoConfigMensagem from "./_componentes/ui/SessaoConfigMensagem";
+import CelularFrame from "../adicionar/_componentes/ui/CelularFrame";
 
 type MensagemIdProps = {
     params: Promise<{ id: string}>

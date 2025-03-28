@@ -1,3 +1,7 @@
+import React from "react"
+import { Mensagem } from "@prisma/client"
+import SessaoCriaMensagem from "../../adicionar/_componentes/ui/SessaoCriaMensagem"
+
 type EditarMensagemProps = {
     params: Promise<{ id: string}>
 }
