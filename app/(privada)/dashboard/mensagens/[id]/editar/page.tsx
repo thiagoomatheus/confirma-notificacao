@@ -30,6 +30,8 @@ export default async function EditarMensagem( { params }: EditarMensagemProps ) 
     return (
         <>
             <h1>Editar Mensagem</h1>
+
+            <SessaoCriaMensagem mensagemExistente={mensagem} />
             
         </>
     )
