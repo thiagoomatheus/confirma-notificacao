@@ -8,7 +8,9 @@ export default async function LayoutPrivate( { children }: { children: React.Rea
     return (
         <main className="min-h-screen flex flex-col">
             <BarraNavegacao />
-            {children}
+            <section className="p-4 w-full max-w-7xl flex flex-col self-center gap-5 md:gap-10">
+                {children}
+            </section>
         </main>
     )
 }

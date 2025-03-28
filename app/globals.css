@@ -8,6 +8,8 @@
   -webkit-box-sizing: border-box;
 }
 
+/* Cores */
+
 :root {
   --primaria: #25D366;
   --secundaria: #333333;
@@ -23,6 +25,41 @@
     --texto: #f8f8f8;
   }
 }
+
+/* Barra de Rolagem */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--terciaria) var(--bg);
+}
+
+/* Chrome, Edge, e Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--terciaria);
+  border-radius: 20px;
+  border: 3px solid var(--bg);
+}
+
+/* Tootip */
+
+.tooltip {
+  @apply invisible absolute duration-100;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
+
+/* Seletores */
 
 body {
   color: var(--texto);
@@ -44,8 +81,12 @@ h3 {
   @apply font-bold;
 }
 
-p, button, a {
+p, button, a, label, input, textarea {
   @apply text-xs;
+}
+
+input, textarea {
+  @apply bg-gray-100 dark:bg-secundaria border border-terciaria rounded-md hover:underline-offset-4 focus:outline-offset-4 focus:outline-primaria text-texto;
 }
 
 .caixa {
@@ -71,6 +112,47 @@ p, button, a {
   animation: AnimaBorda 6s linear infinite;
 }
 
+.celular-frame {
+  @apply w-[320px] md:w-[384px] h-[650px] md:h-[750px] outline-4 md:outline-8 outline outline-texto rounded-3xl flex flex-col gap-5 bg-[#e5ddd5] dark:bg-secundaria relative;
+}
+
+.celular-frame::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../public/fundo-whatsapp.png");
+  opacity: 0.08;
+}
+
+.celular-topo {
+  @apply w-20 md:w-28 m-auto h-3 md:h-5 bg-texto rounded-b-lg z-10 relative;
+}
+
+.celular-conteudo {
+  @apply w-full h-full flex flex-col justify-between self-end;
+  border-radius: inherit;
+}
+
+.celular-mensagem {
+  @apply relative bg-gray-100 dark:bg-gray-600 text-texto p-2 rounded-b-md rounded-ss-md flex flex-col gap-3;
+}
+
+.celular-mensagem-detalhe {
+  @apply w-0 h-0 border-[5px] border-transparent border-l-gray-100 dark:border-l-gray-600 border-t-gray-100 dark:border-t-gray-600 relative;
+}
+
+.celular-rodape {
+  @apply relative h-12 flex flex-row justify-between items-center gap-2 m-3;
+}
+
+.celular-opcoes {
+  @apply relative w-full h-fit flex flex-col justify-end bg-bg p-3 gap-7;
+  border-radius: inherit;
+}
+
 .caixa::after {
   filter: blur(10px);
 }
@@ -88,7 +170,7 @@ p, button, a {
     @apply text-3xl;
   }
 
-  p, button, a {
+  p, button, a, label, input, textarea {
     @apply text-base;
   }
 
