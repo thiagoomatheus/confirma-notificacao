@@ -1,6 +1,7 @@
+import React from "react"
 import BotaoLink from "@/app/_componentes/ui/BotaoLink"
 import CardConfiguracao from "../../_componentes/ui/CardConfiguracao"
-import SessaoComBorda from "../../_componentes/ui/SessaoComBorda"
+import SessaoComBorda from "../../../../../../_componentes/ui/SessaoComBorda"
 import { BiSolidMessageEdit } from "react-icons/bi"
 import { Mensagem, Notificacao } from "@prisma/client"
 
