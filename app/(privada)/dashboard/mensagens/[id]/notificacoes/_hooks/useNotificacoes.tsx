@@ -1,6 +1,8 @@
 import React from "react"
 import { Notificacao } from "@prisma/client";
 import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const notificacaoInicial: Partial<Notificacao> = {
     nome: "",
@@ -24,6 +26,20 @@ const schema = z.object({
 export type Inputs = z.infer<typeof schema>
 
 export default function useNotificacoes(notificacaoExistente?: Notificacao) {
+
+    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
+        resolver: zodResolver(schema),
+        defaultValues: {
+            ...notificacaoExistente,
+            nome: notificacaoExistente?.nome || "",
+            data: notificacaoExistente?.data || new Date(),
+            hora: notificacaoExistente?.hora || "",
+            local: notificacaoExistente?.local || "",
+            obsTexto: notificacaoExistente?.obsTexto || "",
+            telefone: notificacaoExistente?.telefone || "",
+            status: notificacaoExistente?.status || false
+        }
+    });
 
 
 }
