@@ -1,5 +1,6 @@
 import React from "react"
 import { Notificacao } from "@prisma/client";
+import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -41,5 +42,23 @@ export default function useNotificacoes(notificacaoExistente?: Notificacao) {
         }
     });
 
+    const [notificacao, setNotificacao] = useState<Partial<Notificacao> | undefined>(undefined)
 
+    const totalDeCampos = 5
+    const [camposPreenchidos, setCamposPreenchidos] = useState<number>(0)
+
+    function iniciarNotificacao() {
+        setNotificacao(notificacaoInicial)
+        setCamposPreenchidos(0)
+    }
+
+    return {
+        notificacao,
+        camposPreenchidos,
+        totalDeCampos,
+        errors,
+        iniciarNotificacao,
+        register,
+        handleSubmit,
+    }
 }
