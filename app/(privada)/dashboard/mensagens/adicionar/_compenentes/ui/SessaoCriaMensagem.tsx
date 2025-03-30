@@ -7,15 +7,15 @@ import useMensagem from "../../_hooks/useMensagem";
 import { LinhaDeProgresso } from "@/app/_componentes/ui/LinhaDeProgresso";
 import SessaoComBorda from "@/app/_componentes/ui/SessaoComBorda";
 import { FaSave } from "react-icons/fa";
-import CelularFrame from "./CelularFrame";
+import CelularFrame from "../../../_componentes/ui/CelularFrame";
 import SessaoConfigMensagem from "../../../[id]/_componentes/ui/SessaoConfigMensagem";
 import { Mensagem } from "@prisma/client";
 import { BiSolidMessageEdit } from "react-icons/bi";
 import { IoPlay } from "react-icons/io5";
-import Label from "./Label";
-import Formulario from "./Formulario";
-import Fieldset from "./Fieldset";
-import Input from "./Input";
+import Label from "../../../_componentes/ui/Label";
+import Formulario from "../../../_componentes/ui/Formulario";
+import Fieldset from "../../../_componentes/ui/Fieldset";
+import Input from "../../../_componentes/ui/Input";
 
 type SessaoCriaMensagemProps = {
     mensagemExistente?: Mensagem
