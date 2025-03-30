@@ -89,7 +89,7 @@ export default function SessaoCriaMensagem( { mensagemExistente }: SessaoCriaMen
                                     <p>Em poucas palavras descreva qual o assunto principal dessa mensagem. Isso vai te ajudar depois a identificar o objetivo da mensagem.</p>
                                     <p>Ex.: Confirmar presença.</p>
                         
-                                    <Formulario funcao={handleSubmit(definirAssunto)}>
+                                    <Formulario onSubmit={handleSubmit(definirAssunto)}>
                                         <Label texto="Assunto:" obrigatorio >
                                             <Input
                                                 {...register("assunto", { required: true })}
@@ -111,7 +111,7 @@ export default function SessaoCriaMensagem( { mensagemExistente }: SessaoCriaMen
                                     <p>Se desejar incluir um nome na saudação use a chave {`{nome}`}.</p>
                                     <p>Ex.: Olá, {`{nome}`}, tudo bem?</p>
                                     <p>Se desejar que não haja uma saudação na mensagem, deixe o campo em branco.</p>
-                                    <Formulario funcao={handleSubmit(definirSaudacao)}>
+                                    <Formulario onSubmit={handleSubmit(definirSaudacao)}>
                                         <Label texto="Saudação:">
                                             <Input
                                                 {...register("saudacao")}
@@ -130,7 +130,7 @@ export default function SessaoCriaMensagem( { mensagemExistente }: SessaoCriaMen
                                     <h3>Defina o corpo da mensagem...</h3>
                                     <p>O corpo da mensagem é um dos aspectos mais importantes que você irá definir. Aqui você pode descrever do que se trata o lembrete.</p>
                                     <p>Ex.: Passando aqui pra lembrar seu compromisso. Segue a data e o horário abaixo:</p>
-                                    <Formulario funcao={handleSubmit(definirCorpo)} >
+                                    <Formulario onSubmit={handleSubmit(definirCorpo)} >
                                         <Label texto="Corpo:" obrigatorio>
                                             <textarea
                                                 {...register("corpo", { required: true })}
@@ -152,7 +152,7 @@ export default function SessaoCriaMensagem( { mensagemExistente }: SessaoCriaMen
                                     <p>A seção de lembrete de sua mensagem, por padrão, exibirá a data e o horário do compromisso, o qual será configurado no momento de criar a notificação. No entanto, também é possivel adicionar a informação de local e uma observação.</p>
                                     <p>Aqui você pode configurar se as informações de local e observação serão exibidas. Se aplicar ao seu caso, você poderá definir o local e uma observação padrão para todas as notificações a serem criadas.</p>
                                     <p>Defina as informações a seguir:</p>
-                                    <Formulario funcao={handleSubmit(definirObsELocal)}>
+                                    <Formulario onSubmit={handleSubmit(definirObsELocal)}>
                                         <Fieldset legenda="Local">
                                             <Label
                                                 texto="Marque essa opção se deseja lembrar o local:"
@@ -202,7 +202,7 @@ export default function SessaoCriaMensagem( { mensagemExistente }: SessaoCriaMen
                                     <h3>Defina a chamada para ação</h3>
                                     <p>Aqui você pode definir a ação que deseja que seus usuários executem. Primeiro, você definirá a chamada para ação e em seguida as opções disponíveis ao usuário. Você pode definir até 4 opções para seu usuário escolher, sendo uma opção obrigatória.</p>
                                     <p>Ex.: Chamada para ação: Escolha uma opção | Opções: Opção1 - Confirmar presença, Opção2 - Cancelar compromisso</p>
-                                    <Formulario funcao={handleSubmit(definirChamadaParaAcao)}>
+                                    <Formulario onSubmit={handleSubmit(definirChamadaParaAcao)}>
                                         <Label obrigatorio texto="Chamada para ação:">
                                             <Input
                                                 {...register("chamadaParaAcao", { required: true })}
