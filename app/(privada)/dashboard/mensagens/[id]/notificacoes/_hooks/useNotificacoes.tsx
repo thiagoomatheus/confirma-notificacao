@@ -30,7 +30,7 @@ export default function useNotificacoes(notificacaoExistente?: Notificacao) {
 
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
         resolver: zodResolver(schema),
-        defaultValues: {
+        defaultValues: notificacaoExistente && {
             ...notificacaoExistente,
             nome: notificacaoExistente?.nome || "",
             data: notificacaoExistente?.data || new Date(),
