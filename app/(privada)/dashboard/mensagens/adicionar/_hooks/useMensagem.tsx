@@ -36,7 +36,7 @@ export default function useMensagem(mensagemExistente?: Mensagem) {
 
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
         resolver: zodResolver(schema),
-        defaultValues: {
+        defaultValues: mensagemExistente && {
             ...mensagemExistente,
             saudacao: mensagemExistente?.saudacao ? mensagemExistente.saudacao : "",
             localFixo: mensagemExistente?.localFixo ?? "",
