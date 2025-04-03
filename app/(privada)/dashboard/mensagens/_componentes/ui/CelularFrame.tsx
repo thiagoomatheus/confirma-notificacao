@@ -29,6 +29,11 @@ export default function CelularFrame( { mensagem }: CelularFrameProps ) {
     return (
         <div className="celular-frame">
             <div className="celular-topo" />
+            <div className="celular-whatsapp-cabecalho">
+                <IoArrowBack className="text-2xl" />
+                <div className="w-8 h-8 md:w-12 md:h-12 bg-slate-300 rounded-full animate-pulse" />
+                <p className="h-[80%] md:h-[60%] flex items-center">{notificacao?.telefone || "Telefone do usuário"}</p>
+            </div>
             <div className="celular-conteudo">
                 <div className="flex flex-row pl-5 md:pl-7 pr-2 justify-end">
                     <div className="celular-mensagem">

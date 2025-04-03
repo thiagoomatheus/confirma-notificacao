@@ -131,8 +131,12 @@ input, textarea {
   @apply w-20 md:w-28 m-auto h-3 md:h-5 bg-texto rounded-b-lg z-10 relative;
 }
 
+.celular-whatsapp-cabecalho {
+  @apply w-full h-14 md:h-24 bg-gray-100 dark:bg-gray-600 flex flex-row items-end p-2 gap-2 absolute rounded-t-3xl;
+}
+
 .celular-conteudo {
-  @apply w-full h-full flex flex-col justify-between self-end;
+  @apply w-full h-full flex flex-col justify-between self-end mt-14 md:mt-20;
   border-radius: inherit;
 }
 
@@ -149,7 +153,7 @@ input, textarea {
 }
 
 .celular-opcoes {
-  @apply relative w-full h-fit flex flex-col justify-end bg-bg p-3 gap-7;
+  @apply absolute w-full h-fit flex flex-col justify-end bg-bg p-3 gap-7 bottom-0;
   border-radius: inherit;
 }
 
