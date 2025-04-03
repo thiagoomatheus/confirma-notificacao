@@ -6,7 +6,7 @@ import TabelaComMensagensProgramadas from "../../_componentes/ui/TabelaComMensag
 import { MdOutlineNotificationAdd } from "react-icons/md";
 import SessaoComBorda from "../../../../_componentes/ui/SessaoComBorda";
 import SessaoConfigMensagem from "./_componentes/ui/SessaoConfigMensagem";
-import CelularFrame from "../adicionar/_componentes/ui/CelularFrame";
+import CelularFrame from "../_componentes/ui/CelularFrame";
 
 type MensagemIdProps = {
     params: Promise<{ id: string}>

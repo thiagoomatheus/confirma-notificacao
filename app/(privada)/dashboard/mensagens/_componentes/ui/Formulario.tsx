@@ -6,15 +6,14 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 
 type FormularioProps = {
     children: React.ReactNode
-    funcao: (e?: React.BaseSyntheticEvent) => Promise<void>
-}
+} & React.FormHTMLAttributes<HTMLFormElement>
 
-export default function Formulario( { children, funcao }: FormularioProps ) {
+export default function Formulario( { children, ...rest }: FormularioProps ) {
 
     return (
         <form
             className="flex flex-col gap-5"
-            onSubmit={funcao}
+            {...rest}
         >
             {children}
             <BotaoPadrao
