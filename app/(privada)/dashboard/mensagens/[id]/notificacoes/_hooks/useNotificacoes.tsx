@@ -1,8 +1,9 @@
 "use client"
 
+import { Mensagem, Notificacao } from "@prisma/client";
 import { useState } from "react";
 import { z } from "zod";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import dayjs from 'dayjs'
 
@@ -74,14 +75,72 @@ export default function useNotificacoes(idMensagem?: Mensagem["id"], notificacao
         }
     });
 
-    const [notificacao, setNotificacao] = useState<Partial<Notificacao> | undefined>(undefined)
+    const registerCondicional = (campo: keyof Inputs) => {
 
-    const totalDeCampos = 5
-    const [camposPreenchidos, setCamposPreenchidos] = useState<number>(0)
+        const indiceCampos = {
+            nome: 0,
+            dataEHora: 0,
+            local: 0,
+            obsTexto: 0,
+            dataEHoraEnvio: 1,
+            telefone: 2,
+        };
+
+        const requiredStage: number = indiceCampos[campo] || 0;
+    
+        if (camposPreenchidos === requiredStage) {
+            return register(campo);
+        }
+        return {};
+    }
 
     function iniciarNotificacao() {
         setNotificacao(notificacaoInicial)
         setCamposPreenchidos(0)
+    }
+
+    const definirComplementoMensagem: SubmitHandler<Inputs> = (data: Inputs) => {
+
+        const id = notificacaoExistente?.idMensagem || idMensagem
+        const nome = data.nome?.trim() || null
+        const dataEHoraLembrete = data.dataEHora!
+        const localLembrete = data.local?.trim() || null
+        const obsLembrete = data.obsTexto?.trim() || null
+
+        setNotificacao({
+            ...notificacao,
+            idMensagem: id,
+            nome: nome,
+            data: dayjs(dataEHoraLembrete).toDate(),
+            hora: dayjs(dataEHoraLembrete).format("HH:mm"),
+            local: localLembrete,
+            obsTexto: obsLembrete
+        })
+
+        setCamposPreenchidos(camposPreenchidos + 1)
+    }
+
+    const definirMomentoDoEnvio: SubmitHandler<Inputs> = (data: Inputs) => {
+        const dataEHoraEnvio = data.dataEHoraEnvio!
+
+        setNotificacao({
+            ...notificacao,
+            dataEnvio: dayjs(dataEHoraEnvio).toDate(),
+            horaEnvio: dayjs(dataEHoraEnvio).format("HH:mm")
+        })
+
+        setCamposPreenchidos(camposPreenchidos + 1)
+    }
+
+    const definirTelefone: SubmitHandler<Inputs> = (data: Inputs) => {
+        const telefone = data.telefone?.trim()
+
+        setNotificacao({
+            ...notificacao,
+            telefone: telefone
+        })
+
+        setCamposPreenchidos(camposPreenchidos + 1)
     }
 
     return {
@@ -90,7 +149,10 @@ export default function useNotificacoes(idMensagem?: Mensagem["id"], notificacao
         totalDeCampos,
         errors,
         iniciarNotificacao,
-        register,
+        definirComplementoMensagem,
+        definirMomentoDoEnvio,
+        definirTelefone,
+        registerCondicional,
         handleSubmit,
     }
 }
