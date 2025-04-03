@@ -8,7 +8,7 @@ type InputProps = {
 
 export default function Input( { erro, className, ...rest }: InputProps ) {
     return (
-        <>
+        <div className="flex flex-col gap-4">
             <input
                 className={twMerge("max-w-xl p-2", className)}
                 type={rest.type || "text"}
@@ -23,6 +23,6 @@ export default function Input( { erro, className, ...rest }: InputProps ) {
                     {erro.message}
                 </p>
             }
-        </>
+        </div>
     )
 }
