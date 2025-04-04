@@ -23,7 +23,7 @@ export default function BarraNavegacao() {
                 {caminhosNavegacao.map((item, index) => (
                     <>
                         <Link
-                            href={item !== "..." ? `${caminhoUrl.split(item)[0] + item}` : `${caminhoUrl.split(caminhos[4])[0]}`}
+                            href={item !== "..." ? `${caminhoUrl.split(item)[0] + item}` : `${caminhoUrl.split(caminhos[2])[0]}`}
                             key={index}
                             className={`flex items-center hover:underline capitalize ${index === caminhosNavegacao.length - 1 ? "text-primaria font-bold" : "text-texto"}`}
                         >
