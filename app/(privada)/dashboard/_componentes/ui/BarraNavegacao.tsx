@@ -15,8 +15,6 @@ export default function BarraNavegacao() {
 
     caminhosNavegacao.length <= quantidadeLinks ? caminhosNavegacao : caminhosNavegacao.splice(1, (caminhosNavegacao.length - quantidadeLinks + 1), "...")
 
-    console.log(caminhos[3]);
-
     return (
         <div className="p-4 w-full mt-2">
             <nav role="navigation" className="flex items-center gap-x-4 text-texto bg-gray-100 dark:bg-secundaria shadow-lg p-4 rounded-lg w-fit">
@@ -25,7 +23,7 @@ export default function BarraNavegacao() {
                         <Link
                             href={item !== "..." ? `${caminhoUrl.split(item)[0] + item}` : `${caminhoUrl.split(caminhos[2])[0]}`}
                             key={index}
-                            className={`flex items-center hover:underline capitalize ${index === caminhosNavegacao.length - 1 ? "text-primaria font-bold" : "text-texto"}`}
+                            className={` text-xs lg:text-sm flex items-center hover:underline capitalize ${index === caminhosNavegacao.length - 1 ? "text-primaria font-bold" : "text-texto"}`}
                         >
                             {item === "dashboard" && (
                                 <svg
@@ -41,7 +39,7 @@ export default function BarraNavegacao() {
                         </Link>
                         
                         {index !== caminhosNavegacao.length - 1 && (
-                            <span key={`separador-${index}`} className="text-gray-400">
+                            <span key={`separador-${index}`} className="text-gray-400 text-xs lg:text-sm">
                                 &gt;
                             </span>
                         )}
