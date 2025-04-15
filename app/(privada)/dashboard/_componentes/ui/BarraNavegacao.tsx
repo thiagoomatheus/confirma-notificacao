@@ -18,6 +18,7 @@ export default function BarraNavegacao() {
     return (
         <div className="p-4 w-full mt-2">
             <nav role="navigation" className="flex items-center gap-x-4 text-texto bg-gray-100 dark:bg-secundaria shadow-lg p-4 rounded-lg w-fit">
+
                 {caminhosNavegacao.map((item, index) => (
                     <>
                         <Link
@@ -35,7 +36,7 @@ export default function BarraNavegacao() {
                                     <path d="M264-216h96v-240h240v240h96v-348L480-726 264-564v348Zm-72 72v-456l288-216 288 216v456H528v-240h-96v240H192Zm288-327Z" />
                                 </svg>
                             )}
-                            {item.length < 12 ? item : `${item.slice(0, 8)}...`}
+                            {caminhosNavegacao.length > 1 && item === "dashboard" ? null : item.length < 12 ? item : `${item.slice(0, 8)}...`}
                         </Link>
                         
                         {index !== caminhosNavegacao.length - 1 && (
