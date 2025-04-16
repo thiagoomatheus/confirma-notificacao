@@ -12,6 +12,7 @@ model Usuario {
   email             String       @unique
   instanciaWhatsApp String?
   nome              String
+  linkFoto          String?
   mensagens Mensagem[]
   notificacao Notificacao[]
 
